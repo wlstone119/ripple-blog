@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 HELP.md
-/target/
+*/target/
 /logs/
 /.idea/
 !.mvn/wrapper/maven-wrapper.jar
