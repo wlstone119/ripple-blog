@@ -1,0 +1,26 @@
+# Created by .ignore support plugin (hsz.mobi)
+HELP.md
+/target/
+/logs/
+/.idea/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+/.mvn/
+
+/mvnw
+/mvnw.cmd
+.cerberus.report
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.settings
+*.project
+*.classpath
+.DS_Store
+
+
