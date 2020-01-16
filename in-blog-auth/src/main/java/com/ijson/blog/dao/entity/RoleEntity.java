@@ -44,7 +44,7 @@ public class RoleEntity extends BaseEntity {
     @Property("parentRoleId")
     private String parentRoleId;
 
-    @Property("status")
+    @Property( "status")
     private String status;
 
     @Embedded

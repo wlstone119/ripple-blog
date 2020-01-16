@@ -5,6 +5,8 @@ cd $bash_path
 
 git pull
 
+mvn install -Dmaven.test.skip=true
+
 cd $bash_path/in-blog-common
 mvn clean install -Dmaven.test.skip=true
 
@@ -24,7 +26,7 @@ kill -9 $pid
 
 DATE=$(date +%Y%m%d%H%M%S)
 cd $bash_path/in-blog-web
-mv $bash_path/in-blog-web/nohup.out /Users/wanglei/git/in-blog-boot/in-blog-web/logs/$DATE.log
+mv $bash_path/in-blog-web/nohup.out $bash_path-log/$DATE.log
 
 cd $bash_path/in-blog-web/
 nohup mvn spring-boot:run >> nohup.out 2>&1 &

@@ -1,9 +1,13 @@
 package com.ijson.blog.dao.entity;
 
+import com.google.common.collect.Lists;
 import com.ijson.mongo.support.model.BaseEntity;
 import lombok.Data;
 import lombok.ToString;
 import org.mongodb.morphia.annotations.*;
+import com.ijson.mongo.generator.util.ObjectId;
+
+import java.util.List;
 
 @Data
 @Entity(value = "Module", noClassnameStored = true)

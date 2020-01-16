@@ -8,99 +8,110 @@ import org.mongodb.morphia.annotations.*;
 @Data
 @Entity(value = "Reply", noClassnameStored = true)
 @ToString(callSuper = true)
-@Indexes({ @Index(name = "R_PID", fields = { @Field(value = ReplyEntity.Fields.postId), }),
-		@Index(name = "R_ENAME_SHAMID", fields = { @Field(value = ReplyEntity.Fields.ename),
-				@Field(value = ReplyEntity.Fields.shamId) }) })
+@Indexes({
+        @Index(name = "R_PID",
+                fields = {
+                        @Field(value = ReplyEntity.Fields.postId),
+                }),
+        @Index(name = "R_ENAME_SHAMID",
+                fields = {
+                        @Field(value = ReplyEntity.Fields.ename),
+                        @Field(value = ReplyEntity.Fields.shamId)
+                })
+})
 public class ReplyEntity extends BaseEntity {
 
-	@Id
-	private String id;
 
-	@Property(Fields.topicId)
-	private String topicId;
+    @Id
+    private String id;
 
-	@Property(Fields.userId)
-	private String userId;
+    @Property(Fields.topicId)
+    private String topicId;
 
-	@Property("postId")
-	private String postId;
+    @Property(Fields.userId)
+    private String userId;
 
-	@Property("ename")
-	private String ename;
+    @Property("postId")
+    private String postId;
 
-	@Property("shamId")
-	private String shamId;
+    @Property("ename")
+    private String ename;
 
-	@Property(Fields.content)
-	private String content;
+    @Property("shamId")
+    private String shamId;
 
-	@Property(Fields.portraits)
-	private String portraits;
+    @Property(Fields.content)
+    private String content;
 
-	@Property(Fields.replyName)
-	private String replyName;
+    @Property(Fields.portraits)
+    private String portraits;
 
-	@Property(Fields.beReplyName)
-	private String beReplyName;
+    @Property(Fields.replyName)
+    private String replyName;
 
-	@Property(Fields.address)
-	private String address;
+    @Property(Fields.beReplyName)
+    private String beReplyName;
 
-	@Property(Fields.ipAddress)
-	private String ipAddress;
+    @Property(Fields.address)
+    private String address;
 
-	@Property(Fields.userAgent)
-	private String userAgent;
+    @Property(Fields.ipAddress)
+    private String ipAddress;
 
-	@Property(Fields.browse)
-	private String browse;
+    @Property(Fields.userAgent)
+    private String userAgent;
 
-	@Property(Fields.os)
-	private String os;
+    @Property(Fields.browse)
+    private String browse;
 
-	@Property(Fields.fatherId)
-	private String fatherId;
+    @Property(Fields.os)
+    private String os;
 
-	@Property(Fields.lastModifiedBy)
-	private String lastModifiedBy;
+    @Property(Fields.fatherId)
+    private String fatherId;
 
-	@Property(Fields.deleted)
-	private Boolean deleted;
+    @Property(Fields.lastModifiedBy)
+    private String lastModifiedBy;
 
-	@Property(Fields.enable)
-	private boolean enable;
+    @Property(Fields.deleted)
+    private Boolean deleted;
 
-	@Property(Fields.createdBy)
-	private String createdBy;
+    @Property(Fields.enable)
+    private boolean enable;
 
-	@Property(Fields.createTime)
-	private long createTime;
+    @Property(Fields.createdBy)
+    private String createdBy;
 
-	@Property(Fields.avatar)
-	private String avatar;
+    @Property(Fields.createTime)
+    private long createTime;
 
-	public interface Fields {
-		String id = "_id";
-		String topicId = "topicId";
-		String userId = "userId";
-		String postId = "postId";
-		String content = "content";
-		String createdBy = "createdBy";
-		String createTime = "createTime";
-		String enable = "enable";
-		String deleted = "deleted";
-		String lastModifiedBy = "lastModifiedBy";
-		String portraits = "portraits";
-		String replyName = "replyName";
-		String beReplyName = "beReplyName";
-		String address = "address";
-		String browse = "browse";
-		String ipAddress = "ipAddress";
-		String fatherId = "fatherId";
-		String userAgent = "userAgent";
-		String os = "os";
-		String avatar = "avatar";
-		String shamId = "shamId";
-		String ename = "ename";
-	}
+    @Property(Fields.avatar)
+    private String avatar;
+
+
+    public interface Fields {
+        String id = "_id";
+        String topicId = "topicId";
+        String userId = "userId";
+        String postId = "postId";
+        String content = "content";
+        String createdBy = "createdBy";
+        String createTime = "createTime";
+        String enable = "enable";
+        String deleted = "deleted";
+        String lastModifiedBy = "lastModifiedBy";
+        String portraits = "portraits";
+        String replyName = "replyName";
+        String beReplyName = "beReplyName";
+        String address = "address";
+        String browse = "browse";
+        String ipAddress = "ipAddress";
+        String fatherId = "fatherId";
+        String userAgent = "userAgent";
+        String os = "os";
+        String avatar = "avatar";
+        String shamId = "shamId";
+        String ename = "ename";
+    }
 }
+
