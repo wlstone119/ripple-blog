@@ -1,12 +1,17 @@
 # Created by .ignore support plugin (hsz.mobi)
 HELP.md
-*/target/
+./target/
 /logs/
 /.idea/
 !.mvn/wrapper/maven-wrapper.jar
 
 
 /.mvn/
+/in-blog-auth/target/
+/in-blog-boot/target/
+/in-blog-common/target/
+/in-blog-core/target/
+/in-blog-web/target/
 
 /mvnw
 /mvnw.cmd
@@ -24,3 +29,4 @@ HELP.md
 .DS_Store
 
 
+/target/
