@@ -12,6 +12,7 @@ import com.ripple.blog.infrastructure.dao.entity.PostEntity;
 import com.ripple.blog.infrastructure.dao.query.PostQuery;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;
 import org.springframework.stereotype.Component;
@@ -105,6 +106,9 @@ public class PostDaoImpl extends AbstractDao<PostEntity> implements PostDao {
 	public PageResult<PostEntity> find(PostQuery iquery, Page page) {
 		Query<PostEntity> query = datastore.createQuery(PostEntity.class);
 
+		if(StringUtils.isNotBlank(iquery.getUserId())) {
+			query.field(PostEntity.Fields.userId).equal(iquery.getUserId());
+		}
 		if (!Strings.isNullOrEmpty(iquery.getId())) {
 			query.field(PostEntity.Fields.id).equal(iquery.getId());
 		}

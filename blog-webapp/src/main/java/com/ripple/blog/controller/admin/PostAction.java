@@ -18,6 +18,7 @@ import com.ripple.blog.infrastructure.common.exception.BlogBusinessExceptionCode
 import com.ripple.blog.infrastructure.common.exception.BlogCreateException;
 import com.ripple.blog.infrastructure.common.exception.BlogUpdateException;
 import com.ripple.blog.infrastructure.common.model.AuthContext;
+import com.ripple.blog.infrastructure.common.model.Constant;
 import com.ripple.blog.infrastructure.common.util.DateUtils;
 import com.ripple.blog.infrastructure.common.util.Md5Util;
 import com.ripple.blog.infrastructure.dao.entity.FileUploadEntity;
@@ -298,6 +299,10 @@ public class PostAction extends BaseController {
 		if (!Strings.isNullOrEmpty(keyWord)) {
 			query.setLikeTitle(true);
 			query.setTitle(keyWord);
+		}
+		
+		if (!Constant.roleName.equals(context.getRoleEname())) {
+			query.setUserId(context.getId());
 		}
 
 		PageResult<PostEntity> result = postService.find(query, page);

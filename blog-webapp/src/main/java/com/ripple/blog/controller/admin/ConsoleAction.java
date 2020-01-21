@@ -80,7 +80,10 @@ public class ConsoleAction extends BaseController {
 	 * @return
 	 */
 	@RequestMapping("/post/list/page")
-	public ModelAndView postList(Integer index, String keyWord) {
+	public ModelAndView postList(Integer index, String keyWord, HttpServletRequest request) {
+
+		AuthContext context = getContext(request);
+
 		Page page = new Page();
 		if (Objects.isNull(index)) {
 			index = 1;
@@ -91,6 +94,10 @@ public class ConsoleAction extends BaseController {
 		if (!Strings.isNullOrEmpty(keyWord)) {
 			query.setLikeTitle(true);
 			query.setTitle(keyWord);
+		}
+
+		if (!Constant.roleName.equals(context.getRoleEname())) {
+			query.setUserId(context.getId());
 		}
 
 		PageResult<PostEntity> result = postService.find(query, page);
@@ -112,6 +119,7 @@ public class ConsoleAction extends BaseController {
 		view.addObject("keyWord", keyWord);
 		view.addObject("post_active", "active");
 		view.addObject("post_list_active", "active");
+
 		return view;
 	}
 
